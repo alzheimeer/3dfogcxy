@@ -15,17 +15,14 @@ import { RouterModule } from '@angular/router';
     `
 
  <div class="flex bg-slate-100 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
-   <div class="flex relative w-screen">
-         <button type="button"  (click)="toggleMenu()" class="relative  bg-gray-900 p-2 text-gray-400 lg:hidden vertical-text">MENU
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open menu</span>
-
+   <div class="flex relative w-screen h-screen">
+      <button type="button"  (click)="toggleMenu()" class="relative  bg-gray-900 p-2 text-gray-400 lg:hidden vertical-text">MENU
+        <span class="absolute -inset-0.5"></span>
+        <span class="sr-only">Open menu</span>
       </button>
 
       @if (menu) {
-        <div  >
-          <app-sidemenu />
-        </div>
+        <app-sidemenu class="min-h-screen" />
       }@else {
         <div hidden="hidden">
             <app-sidemenu />
@@ -41,10 +38,13 @@ import { RouterModule } from '@angular/router';
  </div>
   `,
   styles: `
-.vertical-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
 
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

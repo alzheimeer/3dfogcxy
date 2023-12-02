@@ -8,29 +8,53 @@ import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
     CommonModule,
   ],
   template: `
-  <div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style="background-image:url('https://images.unsplash.com/photo-1499123785106-343e69e68db1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80')">
-  <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
-    <div class="text-white">
-      <div class="mb-8 flex flex-col items-center">
-        <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Glyph-Color-Logo.wine.svg" width="150" alt="" srcset="" />
-        <h1 class="mb-2 text-2xl">Instagram</h1>
-        <span class="text-gray-300">Enter Login Details</span>
-      </div>
-      <form action="#">
-        <div class="mb-4 text-lg">
-          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="id@email.com" />
-        </div>
+    <div class="flex flex-wrap -mx-3 mb-5">
+    <div class="w-full max-w-full px-3 mb-6  mx-auto">
+      <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] border border-dashed border-stone-200 bg-white m-5">
+        <!-- card body  -->
+        <div class="flex-auto block py-8 px-9">
+          <div>
+            <!-- Title -->
+            <div class="mb-9">
+              <h1 class="mb-2 text-[1.75rem] font-semibold text-dark">{{(aretes[0].category || '') | uppercase}}</h1>
+              <span class="text-[1.15rem] font-medium text-muted">Escoge el modelo y realiza la cotización. </span>
+            </div>
 
-        <div class="mb-4 text-lg">
-          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="Password" name="name" placeholder="*********" />
+            <div class="flex flex-wrap w-full">
+              @if (aretes.length > 0) {
+                @for (arete of aretes; track $index) {
+                  <div class="flex flex-col mr-5 text-center mb-11 lg:mr-16">
+                    <div class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+                    <div class="inline-block mb-4 relative shrink-0 rounded-[.95rem]">
+
+                      <img class="inline-block shrink-0 rounded-[.95rem] w-[150px] h-[150px]" [srcset]="arete.url"
+                        alt="avarat image">
+                    </div>
+                    <div class="text-center">
+                      <a href="javascript:void(0)"
+                        class="text-dark font-semibold hover:text-primary text-[1.25rem] transition-colors duration-200 ease-in-out">{{arete.description}}</a>
+                      <span class="block font-medium text-muted">{{arete.subtitle}}</span>
+                    </div>
+                  </div>
+                  </div>
+                }
+              }@else {
+              <h1>No Hay Datos</h1>
+              }
+
+            </div>
+          </div>
         </div>
-        <div class="mt-8 flex justify-center text-lg text-black">
-          <button type="submit" class="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
+  <div class="flex flex-wrap -mx-3 mb-5">
+    <div class="w-full max-w-full sm:w-3/4 mx-auto text-center">
+      <p class="text-sm text-slate-500 py-1"> 3D <a href="https://3d.fogcxy.com"
+          class="text-slate-700 hover:text-slate-900" target="_blank">Fogcxy</a> by <a href="https://www.linkedin.com/in/alzheimeer/"
+          class="text-slate-700 hover:text-slate-900" target="_blank">Alzheimeer</a>. </p>
+    </div>
+  </div>
   `,
   styles: `
     :host {
@@ -42,5 +66,34 @@ import { ChangeDetectionStrategy, Component, type OnInit } from '@angular/core';
 export class AretesComponent implements OnInit {
 
   ngOnInit(): void { }
+
+   aretes = [
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina',  category: 'aretes' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina',  category: 'aretes' },
+
+  ];
+
 
 }
