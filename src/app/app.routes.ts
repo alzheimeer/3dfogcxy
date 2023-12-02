@@ -15,6 +15,7 @@ import { Registro1Component } from './dashboard/pages/registro1.component';
 import { Login3Component } from './dashboard/pages/login3.component';
 import { PizzaComponent } from './dashboard/pages/pizza.component';
 import { ErrorComponent } from './dashboard/pages/error.component';
+import { Modelo2Component } from './dashboard/pages/modelo2.component';
 
 export const routes: Routes = [
   {
@@ -59,6 +60,12 @@ export const routes: Routes = [
         title: 'Modelo Seleccionado',
         data: { subtitle: 'Modelo' },
         component: ModeloComponent
+      },
+      {
+        path: 'modelo2',
+        title: 'Modelo2 Seleccionado',
+        data: { subtitle: 'Modelo2' },
+        component: Modelo2Component
       },
       {
         path: 'inicio',
