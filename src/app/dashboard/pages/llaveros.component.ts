@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-llaveros',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule
   ],
   template: `
   <div class="flex flex-wrap -mx-3 mb-5">
@@ -24,7 +26,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
               @if (llaveros.length > 0) {
                 @for (llavero of llaveros; track $index) {
                   <div class="flex flex-col mr-5 text-center mb-11 lg:mr-16">
-                    <div class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+                    <div [routerLink]="llavero.path" class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
                     <div class="inline-block mb-4 relative shrink-0 rounded-[.95rem]">
 
                       <img class="inline-block shrink-0 rounded-[.95rem] w-[150px] h-[150px]" [srcset]="llavero.url"
@@ -66,30 +68,30 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class LlaverosComponent {
 
   llaveros = [
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' },
-    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/eagle.jpg', description: 'Aguila', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/flame_dragon1.jpg', description: 'Dragon Flame', subtitle: 'PLA - Resina', category: 'llaveros' , path: '/dashboard/modelo' },
+    { url: './assets/modelos/figuras/Babu-Grogu.jpg', description: 'Babu Y Grogu', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
+    { url: './assets/modelos/figuras/batman_buddha.jpg', description: 'Batman Buddha', subtitle: 'PLA - Resina', category: 'llaveros', path: '/dashboard/modelo'  },
 
   ];
 
