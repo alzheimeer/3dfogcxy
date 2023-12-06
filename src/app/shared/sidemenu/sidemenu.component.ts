@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   template: `
-          <div id="menu" class="bg-gray-900 min-h-full z-10 text-slate-300 w-64  left-0 h-screen overflow-y-scroll">
+          <div id="menu" class="bg-gray-900 min-h-full z-10 text-slate-300 w-64  left-0 h-max overflow-y-scroll">
             <div id="logo" class="my-4 px-6">
               <h1 class="text-lg md:text-2xl font-bold text-white">3D<span class="text-blue-500">FogCxy</span></h1>
               <p class="text-slate-500 text-sm">Colombia</p>

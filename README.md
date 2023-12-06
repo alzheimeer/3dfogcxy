@@ -13,3 +13,4 @@ ng build --configuration production
 - El servidor usa esta lista para encontrar el archivo HTML prerenderizado correspondiente a la ruta solicitada.
 - La carpeta browser contiene los archivos HTML prerenderizados para las rutas que se cargan en el navegador. 
 - La carpeta server contiene los archivos HTML prerenderizados para las rutas que se cargan en el servidor.
+- =
