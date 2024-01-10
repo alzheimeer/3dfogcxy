@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   template: `
-          <div id="menu" class="bg-gray-900 min-h-full z-10 text-slate-300 w-64  left-0 h-max overflow-y-scroll">
+          <div id="menu" class="fixed top-0 bg-gray-900 min-h-full z-10 text-slate-300 w-64 left-0 h-max overflow-y-scroll py-4 px-6">
             <div id="logo" class="my-4 px-6">
               <h1 class="text-lg md:text-2xl font-bold text-white">3D<span class="text-blue-500">FogCxy</span></h1>
               <p class="text-slate-500 text-sm">Colombia</p>
@@ -30,16 +30,17 @@ import { RouterModule } from '@angular/router';
 
               <p class="text-slate-500">Modelos</p>
               @for(item of menuItems; track $index) {
-              <a [routerLink]="item.path" routerLinkActive="bg-blue-800"
-                class="w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150">
+                @if (item.data?.['estado']) {
+                  <a [routerLink]="item.path" routerLinkActive="bg-blue-800"
+                  class="w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150">
 
-                <div class="flex flex-col">
-                  <span class="text-lg font-bold leading-5 text-white">{{item.title}}</span>
-                  <span class="text-sm  text-white/50 md:block">{{item.data?.['subtitle']}}</span>
-                </div>
-              </a>
+                  <div class="flex flex-col">
+                    <span class="text-lg font-bold leading-5 text-white">{{item.title}}</span>
+                    <span class="text-sm  text-white/50 md:block">{{item.data?.['subtitle']}}</span>
+                  </div>
+                </a>
+                }
               }
-
             </div>
           </div>
   `,

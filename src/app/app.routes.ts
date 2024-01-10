@@ -21,13 +21,13 @@ export const routes: Routes = [
   {
     path: 'pizza',
     title: 'pizza',
-    data: { subtitle: 'pizza' },
+    data: { subtitle: 'pizza', estado: true },
     component: PizzaComponent
   },
   {
     path: 'error',
     title: 'error',
-    data: { subtitle: 'error' },
+    data: { subtitle: 'error', estado: true },
     component: ErrorComponent
   },
 
@@ -40,85 +40,85 @@ export const routes: Routes = [
       {
         path: 'figuras',
         title: 'Figuras',
-        data: { subtitle: 'Modelos' },
+        data: { subtitle: 'Modelos', estado: false },
         component: FigurasComponent,
       },
       {
         path: 'llaveros',
         title: 'Llaveros',
-        data: { subtitle: 'Modelos' },
+        data: { subtitle: 'Modelos', estado: false },
         component: LlaverosComponent,
       },
       {
         path: 'aretes',
         title: 'Aretes',
-        data: { subtitle: 'Modelos' },
+        data: { subtitle: 'Modelos', estado: false },
         component: AretesComponent,
       },
       {
         path: 'modelo',
         title: 'Modelo Seleccionado',
-        data: { subtitle: 'Modelo' },
+        data: { subtitle: 'Modelo', estado: false },
         component: ModeloComponent
       },
       {
         path: 'modelo2',
         title: 'Modelo2 Seleccionado',
-        data: { subtitle: 'Modelo2' },
+        data: { subtitle: 'Modelo2', estado: false },
         component: Modelo2Component
       },
       {
         path: 'inicio',
-        title: 'Quienes Somos',
-        data: { subtitle: 'Fogcxy' },
+        title: 'Inicio',
+        data: { subtitle: 'Fogcxy', estado: true },
         component: IniciodashboardComponent,
       },
       {
-        path: 'contactanos',
-        title: 'Contactanos',
-        data: { subtitle: 'datos' },
-        component: ContactanosComponent,
+        path: 'galeria',
+        title: 'Impresoras',
+        data: { subtitle: 'Gallery', estado: true },
+        component: GaleriaComponent
       },
       {
         path: 'equipo',
         title: 'Equipo',
-        data: { subtitle: 'team' },
+        data: { subtitle: 'team', estado: true },
         component: EquipoComponent
       },
       {
-        path: 'galeria',
-        title: 'Galeria',
-        data: { subtitle: 'Gallery' },
-        component: GaleriaComponent
+        path: 'contactanos',
+        title: 'Contactanos',
+        data: { subtitle: 'datos', estado: true },
+        component: ContactanosComponent,
       },
       {
         path: 'registro',
         title: 'Registro',
-        data: { subtitle: 'Registry' },
+        data: { subtitle: 'Registry', estado: false },
         component: Registro1Component
       },
       {
         path: 'login',
         title: 'Login',
-        data: { subtitle: 'Login' },
+        data: { subtitle: 'Login', estado: false },
         component: LoginComponent
       },
       {
         path: 'login2',
         title: 'Login2',
-        data: { subtitle: 'Login2' },
+        data: { subtitle: 'Login2', estado: false },
         component: Login2Component
       },
       {
         path: 'login3',
         title: 'Login3',
-        data: { subtitle: 'Login3' },
+        data: { subtitle: 'Login3', estado: false },
         component: Login3Component
       },
       {
         path: 'creditcard',
         title: 'creditcard',
-        data: { subtitle: 'creditcard' },
+        data: { subtitle: 'creditcard', estado: false },
         component: CreditcardComponent
       },
 
